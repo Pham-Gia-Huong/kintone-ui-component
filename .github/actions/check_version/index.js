@@ -8,7 +8,11 @@ exec('git tag | tail -1 ', (err, stdout) => {
     throw err;
   }
   const version = stdout.slice(1);
+  console.log('stdout',version);
+
   const packageFile = fs.readFileSync('package.json');
+     console.log('packageFile',packageFile);
+
   const packageJson = JSON.parse(packageFile);
   if ((packageJson.version).trim() !== (version).trim()) {
     throw new Error('version is not match');
