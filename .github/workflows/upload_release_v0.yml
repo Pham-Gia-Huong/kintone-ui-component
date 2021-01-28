@@ -20,12 +20,12 @@ jobs:
         npm i @actions/core
     - name: Check version
       id: check_version
-      uses: ./.github/actions/v0/check_version
+      uses: ./.github/actions/check_version
     - name: Generate package binary file
       id: generate_binary
-      uses: ./.github/actions/v0/generate_binary_file
+      uses: ./.github/actions/generate_binary_file
     - name: Upload integrity artifact
-      uses: actions/v0/upload-artifact@master
+      uses: actions/upload-artifact@master
       with:
         name: my-integrity
         path: ./${{ steps.generate_binary.outputs.integrity }}
