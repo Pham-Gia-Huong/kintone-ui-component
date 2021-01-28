@@ -2,7 +2,7 @@ name: On commit workflow
 on:
   push:
     branches:
-      - dev_v1.0
+      - 'dev_v1.0'
 jobs:
   Run_tests:
     name: Run unit test
