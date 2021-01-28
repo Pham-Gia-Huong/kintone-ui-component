@@ -7,6 +7,7 @@ type AttachmentFileItemProps = ControlProps & {
   fileSize?: number;
   onFileRemove?: (index: number) => void;
 }
+console.log("b");
 
 class AttachmentFileItem extends Control<AttachmentFileItemProps> {
   protected element: HTMLDivElement
