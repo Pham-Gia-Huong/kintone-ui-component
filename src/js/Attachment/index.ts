@@ -48,7 +48,7 @@ class Attachment extends Control<AttachmentProps> {
   }
 
   rerender(changedAttr?: string[]) {
-    console.log("ddddd");
+    console.log("ddddad");
     
     super.rerender();
     if (!changedAttr) return;
