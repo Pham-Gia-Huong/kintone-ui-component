@@ -47,9 +47,7 @@ class Attachment extends Control<AttachmentProps> {
     this.rerender(Object.keys(this._props));
   }
 
-  rerender(changedAttr?: string[]) {
-    console.log("ddddad");
-    
+  rerender(changedAttr?: string[]) {    
     super.rerender();
     if (!changedAttr) return;
     if (changedAttr.indexOf('browseButtonText') !== -1) {
