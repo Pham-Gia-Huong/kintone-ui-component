@@ -1,12 +1,12 @@
 {
 	"name": "@kintone/kintone-ui-component",
-	"version": "0.7.2",
+	"version": "0.7.7",
 	"description": "kintone ui component",
 	"author": "Cybozu, Inc.",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/kintone/kintone-ui-component"
+		"url": "https://github.com/kintone-labs/kintone-ui-component"
 	},
 	"sideEffects": [
 		"esm/css/*.css",
@@ -47,10 +47,10 @@
 		"@babel/preset-react": "7.0.0",
 		"@babel/preset-typescript": "7.3.3",
 		"@babel/runtime": "7.6.2",
-		"@cybozu/eslint-config": "7.1.0",
+		"@cybozu/eslint-config": "11.0.3",
 		"@testing-library/dom": "^6.11.0",
-		"@testing-library/jest-dom": "^4.2.4",
-		"@testing-library/react": "^9.4.0",
+		"@testing-library/jest-dom": "^5.11.9",
+		"@testing-library/react": "^11.2.3",
 		"@types/jest": "^24.0.24",
 		"@types/node": "11.13.0",
 		"@types/react": "16.8.12",
@@ -62,20 +62,21 @@
 		"babel-plugin-transform-runtime": "6.23.0",
 		"core-js": "3.2.1",
 		"css-loader": "2.1.1",
-		"eslint": "^6.8.0",
-		"jest": "^24.9.0",
+		"eslint": "7.18.0",
+		"jest": "^26.6.3",
 		"jest-canvas-mock": "^2.2.0",
 		"jest-transform-css": "^2.0.0",
+		"lodash": "^4.17.19",
 		"mini-css-extract-plugin": "0.6.0",
 		"optimize-css-assets-webpack-plugin": "5.0.1",
 		"prettier": "^1.19.1",
 		"react": "16.8.6",
 		"react-dom": "16.8.6",
 		"style-loader": "0.19.1",
-		"terser-webpack-plugin": "2.2.3",
-		"ts-jest": "^24.2.0",
-		"typescript": "3.4.2",
-		"webpack": "4.43.0",
-		"webpack-cli": "3.3.2"
+		"terser-webpack-plugin": "^1.4.5",
+		"ts-jest": "^26.4.4 ",
+		"typescript": "^3.9.4",
+		"webpack": "^4.46.0",
+		"webpack-cli": "^4.3.1"
 	}
 }

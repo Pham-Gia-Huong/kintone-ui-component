@@ -165,26 +165,28 @@ var DateTime = function (_a) {
                 React.createElement("div", { className: "date-container" },
                     React.createElement("div", { className: "text-input-container", key: "" + dateError },
                         React.createElement("input", { type: "text", className: "kuc-input-text text-input", disabled: isDisableBtn, onFocus: function (e) {
-                                setPickerDisplay('block');
-                                setTimePickerDisplay('none');
                                 // if (showPickerError) {
                                 //   setHasSelection(false);
                                 // }
-                                if (!showPickerError && hasSelection) {
-                                    var temporary = new Date(parseStringToDate(e.target.value, dateFormat));
-                                    var dateValue_1 = new Date(parseStringToDate(e.target.value, dateFormat));
-                                    temporary.setSeconds(timeDateValue.getSeconds());
-                                    temporary.setMinutes(timeDateValue.getMinutes());
-                                    temporary.setHours(timeDateValue.getHours());
-                                    temporary.setDate(temporary.getDate() - 1);
-                                    dateValue_1.setSeconds(timeDateValue.getSeconds());
-                                    dateValue_1.setMinutes(timeDateValue.getMinutes());
-                                    dateValue_1.setHours(timeDateValue.getHours());
-                                    setTimeDateValue(temporary);
-                                    setTimeout(function () {
-                                        setTimeDateValue(dateValue_1);
-                                    }, 1);
+                                if (showPickerError || !hasSelection) {
+                                    setPickerDisplay('block');
+                                    return;
                                 }
+                                var temporary = new Date(parseStringToDate(e.target.value, dateFormat));
+                                var dateValue = new Date(parseStringToDate(e.target.value, dateFormat));
+                                temporary.setSeconds(timeDateValue.getSeconds());
+                                temporary.setMinutes(timeDateValue.getMinutes());
+                                temporary.setHours(timeDateValue.getHours());
+                                temporary.setDate(temporary.getDate() - 1);
+                                dateValue.setSeconds(timeDateValue.getSeconds());
+                                dateValue.setMinutes(timeDateValue.getMinutes());
+                                dateValue.setHours(timeDateValue.getHours());
+                                setTimeDateValue(temporary);
+                                setTimeout(function () {
+                                    setPickerDisplay('block');
+                                    setTimePickerDisplay('none');
+                                    setTimeDateValue(dateValue);
+                                }, 1);
                             }, value: inputValue, onBlur: function (e) {
                                 var tempDate = parseStringToDate(e.target.value, dateFormat);
                                 var returnDate = null;

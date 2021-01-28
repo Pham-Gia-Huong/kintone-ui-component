@@ -190,27 +190,30 @@ const DateTime = ({
                 className="kuc-input-text text-input"
                 disabled={isDisableBtn}
                 onFocus={(e) => {
-                  setPickerDisplay('block');
-                  setTimePickerDisplay('none');
                   // if (showPickerError) {
                   //   setHasSelection(false);
                   // }
-                  if (!showPickerError && hasSelection) {
-                    const temporary = new Date(parseStringToDate(e.target.value, dateFormat) as Date);
-                    const dateValue = new Date(parseStringToDate(e.target.value, dateFormat) as Date);
-                    temporary.setSeconds(timeDateValue.getSeconds());
-                    temporary.setMinutes(timeDateValue.getMinutes());
-                    temporary.setHours(timeDateValue.getHours());
-                    temporary.setDate(temporary.getDate() - 1);
-
-                    dateValue.setSeconds(timeDateValue.getSeconds());
-                    dateValue.setMinutes(timeDateValue.getMinutes());
-                    dateValue.setHours(timeDateValue.getHours());
-                    setTimeDateValue(temporary);
-                    setTimeout(()=>{
-                      setTimeDateValue(dateValue);
-                    }, 1);
+                  if (showPickerError || !hasSelection) {
+                    setPickerDisplay('block');
+                    return;
                   }
+
+                  const temporary = new Date(parseStringToDate(e.target.value, dateFormat) as Date);
+                  const dateValue = new Date(parseStringToDate(e.target.value, dateFormat) as Date);
+                  temporary.setSeconds(timeDateValue.getSeconds());
+                  temporary.setMinutes(timeDateValue.getMinutes());
+                  temporary.setHours(timeDateValue.getHours());
+                  temporary.setDate(temporary.getDate() - 1);
+
+                  dateValue.setSeconds(timeDateValue.getSeconds());
+                  dateValue.setMinutes(timeDateValue.getMinutes());
+                  dateValue.setHours(timeDateValue.getHours());
+                  setTimeDateValue(temporary);
+                  setTimeout(() => {
+                    setPickerDisplay('block');
+                    setTimePickerDisplay('none');
+                    setTimeDateValue(dateValue);
+                  }, 1);
                 }}
                 value={inputValue}
                 onBlur={(e) => {
