@@ -5,7 +5,7 @@ import AttachmentFileItem from './AttachmentFileItem';
 import '../../css/Attachment.css';
 
 type FileObject = {
-  name?: string;
+  name?: string;  
   size?: number;
 }
 
