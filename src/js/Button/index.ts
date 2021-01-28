@@ -30,6 +30,8 @@ class Button extends Control<ButtonProps> {
 
   rerender(changedAttr?: string[]) {
     // super.rerender();
+    console.log("d");
+    
     if (!changedAttr) return;
     if (changedAttr.indexOf('type') !== -1) {
       this.element.className = this._getClassName();
