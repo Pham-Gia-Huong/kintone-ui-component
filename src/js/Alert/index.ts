@@ -60,6 +60,8 @@ class Alert extends Control<AlertProps> {
 
   setType(type: 'error' | 'success'): void {
     this._props.type = type;
+    console.log("ddd");
+    
     this.rerender(['type']);
   }
 
