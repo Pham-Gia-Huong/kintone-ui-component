@@ -8,6 +8,8 @@ type FileObject = {
   name?: string;  
   size?: number;
 }
+console.log("a");
+
 
 type AttachmentProps = ControlProps & {
   dropZoneText?: string;
