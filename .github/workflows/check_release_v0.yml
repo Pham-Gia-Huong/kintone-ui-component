@@ -3,6 +3,8 @@ name: Check For Release CI
 on:
   release:
     types: [created]
+    branches:
+      - main
 jobs:
   Run_tests:
     name: Run unit test and automation test
@@ -20,7 +22,7 @@ jobs:
         npm i @actions/core
     - name: Check version
       id: check_version
-      uses: ./.github/actions/check_version
+      uses: ./.github/actions/v0/check_version
     - name: Run ESLint
       run: |
         node_modules/.bin/eslint src/js/**.ts
@@ -35,7 +37,7 @@ jobs:
       uses: peter-evans/repository-dispatch@v1
       with:
         token: ${{secrets.WORKFLOW_TOKEN}}
-        event-type: release_dispatch
+        event-type: release_dispatch_v0
     # Use this to run flow auto test
     # - name: Trigger run automation test
     #   uses: peter-evans/repository-dispatch@v1

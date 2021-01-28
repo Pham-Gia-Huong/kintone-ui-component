@@ -1,6 +1,8 @@
 name: On commit workflow
 on:
   push:
+    branches:
+      - main
 jobs:
   Run_tests:
     name: Run unit test
